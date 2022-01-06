@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Pacifico&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+  <style>
+    body {
+      font-family: 'Bakbak One', san-serif;
+      text-align: center;
+    }
+    
+    button,
+    #submit {
+      background-color: rgb(236, 130, 0);
+      border:none;
+    }
+
+    .form-input {
+      font-size: 15px;
+      margin: 15px;
+    }    
+  </style>
+</head>
+
+<body>
+  <div class="main-heading text-center">
+    <h1>Movies Seen</h1>
+    <form id="rate-movie-form" class="form-inline justify-content-center">
+      <div class="form-input">
+        <label for="title">Title</label>
+        <input id="textInput" type="text" minlength="2" required/>
+      </div>
+
+      <div class="form-input">
+        <label for="rating">Rating</label>
+        <input type="range" id="ratingInput" class="custom-range" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+        <output>5</output> ⭐️
+        <!-- https://stackoverflow.com/questions/10004723/html5-input-type-range-show-range-value -->
+      </div>
+    
+      <div class="form-input">
+        <input id="submit" type="submit" class="btn btn-primary form-control mx-sm-3" value="Add Rating"/>
+      </div>
+    </form>
+  
+    <table class="table table-striped table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Title<i id="title" class="fas fa-sort-down"></i></th>
+          <th scope="col">Rating<i id="rating" class="fas fa-sort-down"></i></th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="movie-table-body">
+      
+      </tbody>  
+    </table>
+  
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="part2-movies.js"></script>
+</body>
+</html>
